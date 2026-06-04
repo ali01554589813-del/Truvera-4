@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سلة المشتريات | TRUVERA STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">
+            السلة 🛒 (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <h2>سلة المشتريات</h2>
+    <p>راجع منتجاتك قبل إتمام الطلب</p>
+</section>
+
+<main class="cart">
+
+    <div id="cartItems">
+        جاري تحميل المنتجات...
+    </div>
+
+    <div class="cart-summary">
+
+        <h2 id="total">
+            الإجمالي: 0 EGP
+        </h2>
+
+        <a href="checkout.html" class="btn">
+            متابعة إلى الدفع
+        </a>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+<script>
+
+if(typeof renderCart === "function"){
+    renderCart();
+}
+
+if(typeof updateCartCount === "function"){
+    updateCartCount();
+}
+
+</script>
+
+</body>
+</html>
