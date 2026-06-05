@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إتمام الطلب | TRUVERA STORE</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-
-<header class="header">
-    <div class="logo">
-        <h1>TRUVERA STORE</h1>
-    </div>
-
-    <nav class="navbar">
-        <a href="index.html">الرئيسية</a>
-        <a href="products.html">المنتجات</a>
-        <a href="cart.html">السلة</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>إتمام الطلب</h2>
-    <p>أدخل بيانات الشحن لإكمال الطلب</p>
-</section>
-
-<div class="checkout-container">
-
-    <div class="checkout-card">
-
-        <h3>بيانات العميل</h3>
-
-        <input id="name" type="text" placeholder="الاسم الكامل">
-
-        <input id="phone" type="tel" placeholder="رقم الهاتف">
-
-        <input id="address" type="text" placeholder="العنوان">
-
-        <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
-
-    </div>
-
-    <div class="checkout-card">
-
-        <h3>ملخص الطلب</h3>
-
-        <div id="orderSummary">
-            جاري تحميل الطلب...
-        </div>
-
-        <div class="checkout-total">
-            <h2 id="total">
-                الإجمالي: 0 EGP
-            </h2>
         </div>
         <h3>طريقة الدفع</h3>
 
@@ -170,9 +115,3 @@ function placeOrder(){
     window.open(
         "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message),
         "_blank"
-    );
-}
-
-
-</body>
-</html>
