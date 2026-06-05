@@ -55,9 +55,7 @@
                 الإجمالي: 0 EGP
             </h2>
         </div>
-
-
-<h3>طريقة الدفع</h3>
+        <h3>طريقة الدفع</h3>
 
 <select id="paymentMethod">
     <option>الدفع عند الاستلام</option>
@@ -71,7 +69,14 @@
     <option>شحن عادي</option>
     <option>شحن سريع</option>
 </select>
-        
+<h3>طريقة الدفع</h3>
+
+<select id="paymentMethod">
+    <option>الدفع عند الاستلام</option>
+    <option>تحويل بنكي</option>
+    <option>فودافون كاش</option>
+</select>
+
         <button onclick="placeOrder()">
             تأكيد الطلب عبر واتساب
         </button>
@@ -117,10 +122,57 @@ function loadOrder(){
     document.getElementById("total").innerText =
     "الإجمالي: " + total + " EGP";
 }
+<script>
 
 loadOrder();
 
+function placeOrder(){
+    alert("تم الضغط على زر الطلب");
+}
+
 </script>
+function placeOrder(){
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+
+    let payment = document.getElementById("paymentMethod").value;
+    let shipping = document.getElementById("shippingMethod").value;
+
+    if(name === "" || phone === "" || address === ""){
+        alert("يرجى إدخال جميع البيانات");
+        return;
+    }
+
+    let total = 0;
+    let message = "🛒 طلب جديد من TRUVERA STORE\n\n";
+
+    cart.forEach(item=>{
+
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        message += `${item.name}\n`;
+        message += `الكمية: ${item.quantity}\n`;
+        message += `السعر: ${itemTotal} EGP\n\n`;
+    });
+
+    message += `👤 الاسم: ${name}\n`;
+    message += `📞 الهاتف: ${phone}\n`;
+    message += `📍 العنوان: ${address}\n`;
+    message += `💳 الدفع: ${payment}\n`;
+    message += `🚚 الشحن: ${shipping}\n`;
+    message += `💰 الإجمالي: ${total} EGP`;
+
+    let whatsappNumber = "201273735156";"201001342050;"
+
+    window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+}
+
 
 </body>
 </html>
